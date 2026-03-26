@@ -15,8 +15,8 @@
 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
+
 <body>
 
 <!-- NAVBAR -->
@@ -79,78 +79,77 @@
 <section id="vehicules" class="py-5 bg-light">
   <div class="container">
     <h3 class="text-center mb-5">Nos Véhicules</h3>
-
     <div class="row g-4">
 
       <!-- Voitures -->
       <div class="col-md-4">
         <div class="card car-card">
-          <img src="./image/BMW.jpg" alt="">
+          <img src="./image/BMW.jpg" alt="BMW Série 3">
           <div class="card-body">
             <h5>BMW Série 3</h5>
             <p>2022 • 35 000 km • Automatique</p>
             <h6>35 000 €</h6>
-            <button class="btn btn-dark w-100" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Réserver</button>
+            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="card car-card">
-          <img src="./image/audi.jpg" alt="">
+          <img src="./image/audi.jpg" alt="Audi A4">
           <div class="card-body">
             <h5>Audi A4</h5>
             <p>2021 • 40 000 km</p>
             <h6>28 000 €</h6>
-            <button class="btn btn-dark w-100" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Réserver</button>
+            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="card car-card">
-          <img src="./image/pexels-auto-2179220_1920.jpg" alt="">
+          <img src="./image/pexels-auto-2179220_1920.jpg" alt="Mercedes Classe A">
           <div class="card-body">
             <h5>Mercedes Classe A</h5>
             <p>2023 • 20 000 km</p>
             <h6>30 000 €</h6>
-            <button class="btn btn-dark w-100" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Réserver</button>
+            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="card car-card">
-          <img src="./image/Peugeot_yaris.jpg" alt="">
+          <img src="./image/Peugeot_yaris.jpg" alt="Peugeot 3008">
           <div class="card-body">
             <h5>Peugeot 3008</h5>
             <p>2020 • 50 000 km</p>
             <h6>25 000 €</h6>
-            <button class="btn btn-dark w-100" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Réserver</button>
+            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="card car-card">
-          <img src="./image/clio.jpg" alt="">
+          <img src="./image/clio.jpg" alt="Renault Clio">
           <div class="card-body">
             <h5>Renault Clio</h5>
             <p>2019 • 60 000 km</p>
             <h6>18 000 €</h6>
-            <button class="btn btn-dark w-100" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Réserver</button>
+            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="card car-card">
-          <img src="./image/Toyota.jpg" alt="">
+          <img src="./image/Toyota.jpg" alt="Toyota Yaris">
           <div class="card-body">
             <h5>Toyota Yaris</h5>
             <p>2022 • 25 000 km</p>
             <h6>20 000 €</h6>
-            <button class="btn btn-dark w-100" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Réserver</button>
+            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
           </div>
         </div>
       </div>
@@ -165,20 +164,21 @@
     <h3>Contactez-nous</h3>
     <p>Une question ? Un projet ? Notre équipe est à votre écoute.</p>
 
-    <form class="row g-3 justify-content-center mt-4">
+    <form id="contact-form" class="row g-3 justify-content-center mt-4">
       <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="Nom" name="name" required>
+        <input type="text" name="name" class="form-control" placeholder="Nom" required>
       </div>
       <div class="col-md-4">
-        <input type="email" class="form-control" placeholder="Email" name="email" required>
+        <input type="email" name="email" class="form-control" placeholder="Email" required>
       </div>
       <div class="col-8">
-        <textarea class="form-control" rows="4" placeholder="Votre message" name="message" required></textarea>
+        <textarea name="message" class="form-control" rows="4" placeholder="Votre message" required></textarea>
       </div>
       <div class="col-8">
         <button type="submit" class="btn btn-warning w-100">Envoyer</button>
       </div>
     </form>
+
   </div>
 </section>
 
@@ -211,34 +211,7 @@
 
 <!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
-<script>
-  // ---------------------------
-  // INIT EMAILJS
-  // ---------------------------
-  emailjs.init("HeO1_mAy0qgr_5xfd"); // <-- Ta PUBLIC KEY ici
-
-  // Sélectionne le formulaire
-  const form = document.querySelector("form");
-
-  form.addEventListener("submit", function(event) {
-    event.preventDefault(); // empêche le rechargement de la page
-
-    // ---------------------------
-    // ENVOI EMAIL
-    // ---------------------------
-    emailjs.sendForm(
-      "service_xvwhy4f",      // <-- Ton Service ID
-      "template_tz1zt7n",     // <-- Ton Template ID
-      this
-    ).then(function() {
-      alert("Message envoyé avec succès !");
-      form.reset();
-    }, function(error) {
-      alert("Erreur lors de l'envoi : " + JSON.stringify(error));
-      console.log(error);
-    });
-  });
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
