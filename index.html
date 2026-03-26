@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JORDYBUSINESS - Vente de véhicules</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">JORDYBUSINESS</a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#hero">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#vehicules">Véhicules</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="hero" class="hero text-center text-white d-flex align-items-center">
+  <div class="container">
+    <h1>JORDYBUSINESS</h1>
+    <p class="subtitle">L’excellence automobile pour tous les terrains</p>
+    <a href="#vehicules" class="btn btn-warning mt-3">Voir les véhicules</a>
+  </div>
+</header>
+
+<!-- SERVICES -->
+<section id="services" class="py-5 text-center">
+  <div class="container">
+    <h3>Nos Services</h3>
+    <p class="mb-5">AUTOZEIN vous accompagne dans tous vos projets automobiles avec des solutions adaptées et professionnelles.</p>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="card service-card p-4">
+          <h5>Vente de véhicules</h5>
+          <p>Large sélection de voitures neuves et d’occasion soigneusement vérifiées pour garantir qualité et performance.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card service-card p-4">
+          <h5>Location flexible</h5>
+          <p>Des offres de location adaptées à vos besoins, que ce soit pour un jour, une semaine ou plus.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card service-card p-4">
+          <h5>Entretien & suivi</h5>
+          <p>Un service professionnel pour maintenir votre véhicule en parfait état et assurer votre sécurité.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VEHICULES -->
+<section id="vehicules" class="py-5 bg-light">
+  <div class="container">
+    <h3 class="text-center mb-5">Nos Véhicules</h3>
+
+    <div class="row g-4">
+
+      <!-- Voiture -->
+      <div class="col-md-4">
+        <div class="card car-card">
+          <img src="./image/BMW.jpg" alt="">
+          <div class="card-body">
+            <h5>BMW Série 3</h5>
+            <p>2022 • 35 000 km • Automatique</p>
+            <h6>35 000 €</h6>
+            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card car-card">
+          <img src="./image/audi.jpg" alt="">
+          <div class="card-body">
+            <h5>Audi A4</h5>
+            <p>2021 • 40 000 km</p>
+            <h6>28 000 €</h6>
+            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card car-card">
+             <img src="./image/pexels-auto-2179220_1920.jpg" alt="">
+          <div class="card-body">
+            <h5>Mercedes Classe A</h5>
+            <p>2023 • 20 000 km</p>
+            <h6>30 000 €</h6>
+            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card car-card">
+          <img src="./image/Peugeot_yaris.jpg" alt="">
+          <div class="card-body">
+            <h5>Peugeot 3008</h5>
+            <p>2020 • 50 000 km</p>
+            <h6>25 000 €</h6>
+            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card car-card">
+          <img src="./image/clio.jpg" alt="">
+          <div class="card-body">
+            <h5>Renault Clio</h5>
+            <p>2019 • 60 000 km</p>
+            <h6>18 000 €</h6>
+            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card car-card">
+          <img src="./image/Toyota.jpg" alt="">
+          <div class="card-body">
+            <h5>Toyota Yaris</h5>
+            <p>2022 • 25 000 km</p>
+            <h6>20 000 €</h6>
+            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-5 text-center">
+  <div class="container">
+    <h3>Contactez-nous</h3>
+    <p>Une question ? Un projet ? Notre équipe est à votre écoute.</p>
+
+    <form class="row g-3 justify-content-center mt-4">
+      <div class="col-md-4">
+        <input type="text" class="form-control" placeholder="Nom">
+      </div>
+      <div class="col-md-4">
+        <input type="email" class="form-control" placeholder="Email">
+      </div>
+      <div class="col-8">
+        <textarea class="form-control" rows="4" placeholder="Votre message"></textarea>
+      </div>
+      <div class="col-8">
+        <button class="btn btn-warning w-100">Envoyer</button>
+      </div>
+    </form>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white pt-4 pb-2">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Logo ou nom -->
+      <div class="col-md-4 mb-3 mb-md-0">
+        <h5 class="fw-bold">JORDYBUSINESS</h5>
+        <p class="small">L’excellence automobile pour tous les terrains</p>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-4 mb-3 mb-md-0">
+        <p class="mb-1"><i class="fas fa-phone-alt me-2"></i>07-67-77-80-81</p>
+        <p class="mb-0"><i class="fas fa-envelope me-2"></i>jordybusiness@gmail.com</p>
+      </div>
+
+      <!-- Réseaux sociaux -->
+      <div class="col-md-4">
+        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+    </div>
+
+    <hr class="bg-white mt-3">
+
+    <p class="small mb-0">© 2026 JORDYBUSINESS - Tous droits réservés</p>
+  </div>
+</footer>
+
+<!-- N'oublie pas d'inclure Font Awesome dans ton <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

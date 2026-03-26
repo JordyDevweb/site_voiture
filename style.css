@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ===== GLOBAL ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #222;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: #111 !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    padding: 0.8rem 1rem;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important;
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 50vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('./image/hero-bg.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero .subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.hero .subtitle::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #ffc107;
+    margin: 10px auto 0;
+    border-radius: 3px;
+}
+
+.hero a.btn {
+    border-radius: 25px;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.hero a.btn:hover {
+    transform: scale(1.05);
+}
+
+/* ===== SECTIONS ===== */
+section {
+    padding: 60px 20px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    position: relative;
+    text-align: center;
+}
+
+h3::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    background: #ffc107;
+    display: block;
+    margin: 15px auto 0;
+    border-radius: 3px;
+}
+
+/* ===== SERVICES ===== */
+.service-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.service-card h5 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* ===== VEHICULES ===== */
+.car-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.car-card:hover img {
+    transform: scale(1.05);
+}
+
+.car-card .card-body {
+    padding: 20px;
+    text-align: left;
+}
+
+.car-card h5 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.car-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.car-card h6 {
+    font-weight: 700;
+    color: #111;
+}
+
+.car-card button {
+    border-radius: 25px;
+    font-weight: 600;
+    padding: 8px 20px;
+    transition: all 0.3s;
+}
+
+.car-card button:hover {
+    transform: scale(1.05);
+}
+
+/* ===== FORMULAIRE CONTACT ===== */
+form input, form textarea {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #ffc107;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+}
+
+form button {
+    border-radius: 25px;
+    font-weight: 600;
+    padding: 10px 20px;
+    background: #ffc107;
+    border: none;
+    transition: all 0.3s;
+}
+
+form button:hover {
+    background: #e0a800;
+    transform: scale(1.05);
+}
+
+/* ===== FOOTER ===== */
+/* Footer de base */
+footer {
+    background: #111;
+    color: #ffffff; /* couleur normale du texte */
+    padding: 25px 20px;
+    font-size: 0.9rem;
+    text-align: center;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+/* Au survol du footer */
+footer:hover {
+    transform: scale(1.02);
+}
+
+/* Changement de couleur du texte et des titres au survol */
+footer:hover, 
+footer:hover p, 
+footer:hover h5, 
+footer:hover a, 
+footer:hover i {
+    color: #e0a800; /* couleur dorée */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Icônes sociales : léger zoom au survol individuel */
+footer a i {
+    transition: all 0.3s ease;
+}
+
+footer a:hover i {
+    transform: scale(1.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1rem;
+    }
+
+    .service-card, .car-card {
+        margin-bottom: 20px;
+    }
+}
