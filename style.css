@@ -7,11 +7,17 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f5f7fa;
     color: #222;
     line-height: 1.6;
+    padding-top: 85px; /* Empêche le contenu d'être caché sous la fixed-top navbar */
     scroll-behavior: smooth;
 }
 
@@ -26,73 +32,113 @@ a {
 
 /* ===== NAVBAR ===== */
 .navbar {
-    background: #111 !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    padding: 0.8rem 1rem;
+    background: rgba(15, 15, 15, 0.9) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+    padding: 1rem 5%;
+    transition: all 0.3s ease;
 }
 
 .navbar-brand {
-    font-weight: 700;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+}
+.navbar-brand:hover {
+    transform: scale(1.02);
+}
+.navbar-brand i {
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.4);
 }
 
 .nav-link {
     font-weight: 500;
     margin-left: 10px;
     transition: 0.3s;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 5px;
+    left: 8px;
+    background-color: #ffc107;
+    transition: width 0.3s ease;
 }
 
 .nav-link:hover {
     color: #ffc107 !important;
 }
 
-/* ===== HERO ===== */
-.hero {
-    height: 50vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                url('./image/hero-bg.jpg') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    color: #fff;
-    padding: 0 1rem;
+.nav-link:hover::after {
+    width: 80%;
 }
 
-.hero h1 {
-    font-size: 2.5rem;
+/* ===== HERO CAROUSEL ===== */
+header#hero, #heroCarousel {
+    height: 70vh; /* Un peu plus grand pour plus d'impact */
+    min-height: 500px;
+}
+
+.carousel-item {
+    height: 70vh;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-caption {
+    bottom: 0;
+    top: 0;
+    padding-bottom: 0;
+}
+
+.carousel-caption h1 {
+    font-size: 3.5rem;
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
-.hero .subtitle {
-    font-size: 1.2rem;
+.carousel-caption .subtitle {
+    font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 15px;
     position: relative;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 
-.hero .subtitle::after {
+.carousel-caption .subtitle::after {
     content: "";
     display: block;
-    width: 60px;
-    height: 3px;
+    width: 80px;
+    height: 4px;
     background: #ffc107;
-    margin: 10px auto 0;
-    border-radius: 3px;
+    margin: 15px auto 0;
+    border-radius: 4px;
 }
 
-.hero a.btn {
-    border-radius: 25px;
-    padding: 10px 25px;
+.carousel-caption a.btn {
+    border-radius: 30px;
+    padding: 12px 35px;
     font-weight: 600;
-    transition: all 0.3s;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
 }
 
-.hero a.btn:hover {
-    transform: scale(1.05);
+.carousel-caption a.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 193, 7, 0.6);
 }
 
 /* ===== SECTIONS ===== */
@@ -123,13 +169,15 @@ h3::after {
     background: #fff;
     border-radius: 15px;
     padding: 30px 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
 }
 
 .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    border-color: #ffc107;
 }
 
 .service-card h5 {
@@ -137,24 +185,42 @@ h3::after {
     margin-bottom: 15px;
 }
 
+/* ===== FIlTRES ===== */
+.filter-btn {
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    padding: 6px 20px;
+}
+
+.filter-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
 /* ===== VEHICULES ===== */
 .car-card {
     background: #fff;
     border-radius: 15px;
     overflow: hidden;
-    transition: 0.3s;
+    transition: all 0.4s ease;
     cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.car-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
 .car-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    transition: transform 0.3s;
+    transition: transform 0.5s ease;
 }
 
 .car-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .car-card .card-body {
@@ -182,11 +248,42 @@ h3::after {
     border-radius: 25px;
     font-weight: 600;
     padding: 8px 20px;
-    transition: all 0.3s;
+    transition: all 0.4s ease;
+    border: 1px solid #111;
+    background: #111;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.car-card button::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(45deg, #ffc107, #ff9800, #ffc107);
+    background-size: 200% 200%;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+    opacity: 0;
+}
+
+.car-card button:hover::before {
+    opacity: 1;
+    animation: gradientShift 3s ease infinite;
 }
 
 .car-card button:hover {
-    transform: scale(1.05);
+    color: #111 !important;
+    border-color: transparent;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.5);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* ===== FORMULAIRE CONTACT ===== */
@@ -195,12 +292,14 @@ form input, form textarea {
     border: 1px solid #ccc;
     padding: 10px;
     width: 100%;
+    transition: all 0.3s ease;
 }
 
 form input:focus, form textarea:focus {
     outline: none;
     border-color: #ffc107;
-    box-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
+    transform: translateY(-3px);
 }
 
 form button {
@@ -209,12 +308,14 @@ form button {
     padding: 10px 20px;
     background: #ffc107;
     border: none;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);
 }
 
 form button:hover {
-    background: #e0a800;
-    transform: scale(1.05);
+    background: #ffca2c;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.5);
 }
 
 /* ===== FOOTER ===== */
@@ -225,23 +326,87 @@ footer {
     padding: 25px 20px;
     font-size: 0.9rem;
     text-align: center;
-    opacity: 0.9;
+    opacity: 0.98;
+}
+
+/* ===== ANIMATIONS SUR LES TEXTES (HOVERS) ===== */
+/* Survol des grands titres (Nos Services, Nos Véhicules, etc.) */
+h3 {
     transition: all 0.3s ease;
 }
-
-/* Au survol du footer */
-footer:hover {
+h3:hover {
+    color: #ffc107;
+    letter-spacing: 2px;
     transform: scale(1.02);
+    text-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
 }
 
-/* Changement de couleur du texte et des titres au survol */
-footer:hover, 
-footer:hover p, 
-footer:hover h5, 
-footer:hover a, 
-footer:hover i {
-    color: #e0a800; /* couleur dorée */
+/* Effets sur les textes des voitures */
+.car-card h5 {
+    transition: all 0.3s ease;
+}
+.car-card:hover h5 {
+    color: #ffc107;
+    transform: translateX(5px);
+}
+
+.car-card p {
+    transition: all 0.3s ease;
+}
+.car-card:hover p {
+    color: #111;
+}
+
+.car-card h6 {
+    transition: all 0.3s ease;
+}
+.car-card:hover h6 {
+    transform: scale(1.1);
+    color: #ffc107;
+    transform-origin: left center;
+}
+
+/* Effets sur les textes des services */
+.service-card h5 {
+    transition: all 0.3s ease;
+}
+.service-card:hover h5 {
+    color: #ffc107;
+    transform: translateY(-3px);
+}
+
+.service-card p {
+    transition: all 0.3s ease;
+}
+.service-card:hover p {
+    color: #555;
+}
+
+/* Survol des titres du Carrousel */
+.carousel-caption h1 {
+    transition: all 0.4s ease;
+}
+.carousel-caption:hover h1 {
+    letter-spacing: 4px;
+    color: #ffc107;
+}
+
+/* Survol des paragraphes dans les contacts */
+#contact p {
+    transition: all 0.3s ease;
+}
+#contact:hover p {
+    color: #ffc107;
+    transform: scale(1.05);
+}
+
+/* Changement de couleur du texte et des titres au survol dans le footer */
+footer a:hover, 
+footer i:hover,
+footer h5:hover {
+    color: #ffc107; /* couleur dorée */
     transition: color 0.3s ease, transform 0.3s ease;
+    transform: scale(1.05);
 }
 
 /* Icônes sociales : léger zoom au survol individuel */
@@ -251,6 +416,97 @@ footer a i {
 
 footer a:hover i {
     transform: scale(1.2);
+}
+
+/* ===== SCROLL TO TOP ===== */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    background-color: #ffc107;
+    color: #111;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+#scrollToTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #111;
+    color: #ffc107;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+}
+
+/* ===== AVIS CLIENTS & FAQ ===== */
+#reviews {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+}
+#reviewsCarousel .carousel-item p {
+    line-height: 1.8;
+}
+.accordion-button:not(.collapsed) {
+    background-color: #111 !important;
+    color: #ffc107 !important;
+    box-shadow: none !important;
+}
+.accordion-button:focus {
+    border-color: #ffc107 !important;
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25) !important;
+}
+
+/* ===== DARK MODE OVERRIDES ===== */
+[data-bs-theme="dark"] body {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+[data-bs-theme="dark"] .bg-white,
+[data-bs-theme="dark"] .bg-light {
+    background-color: #1e1e1e !important;
+}
+[data-bs-theme="dark"] .text-dark {
+    color: #f8f9fa !important;
+}
+[data-bs-theme="dark"] .text-muted {
+    color: #b0b0b0 !important;
+}
+[data-bs-theme="dark"] .card, 
+[data-bs-theme="dark"] .modal-content, 
+[data-bs-theme="dark"] .accordion-item,
+[data-bs-theme="dark"] .accordion-button,
+[data-bs-theme="dark"] .accordion-collapse,
+[data-bs-theme="dark"] .carousel-inner {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+}
+[data-bs-theme="dark"] #reviews {
+    background: linear-gradient(135deg, #181818 0%, #111 100%) !important;
+}
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .input-group-text,
+[data-bs-theme="dark"] select {
+    background-color: #2d2d2d !important;
+    border-color: #444 !important;
+    color: #fff !important;
+}
+[data-bs-theme="dark"] .form-control::placeholder {
+    color: #999 !important;
+}
+[data-bs-theme="dark"] .accordion-button:not(.collapsed) {
+    background-color: #111 !important;
+    color: #ffc107 !important;
 }
 
 /* ===== RESPONSIVE ===== */

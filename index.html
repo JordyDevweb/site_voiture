@@ -1,217 +1,491 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JORDYBUSINESS - Vente de véhicules</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="JORDYBUSINESS, votre agence d'excellence automobile. Vente de véhicules neufs et d'occasion, location flexible et entretien professionnel.">
+  <meta name="keywords" content="voiture, occasion, auto, vente, location, JORDYBUSINESS, AUTOZEIN">
+  <meta property="og:title" content="JORDYBUSINESS - Vente de véhicules">
+  <meta property="og:description"
+    content="Découvrez notre large sélection de voitures de prestige. L'excellence automobile pour tout terrain.">
+  <meta property="og:type" content="website">
+  <title>JORDYBUSINESS - Vente de véhicules</title>
 
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">JORDYBUSINESS</a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#hero">Accueil</a></li>
-        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#vehicules">Véhicules</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header id="hero" class="hero text-center text-white d-flex align-items-center">
-  <div class="container">
-    <h1>JORDYBUSINESS</h1>
-    <p class="subtitle">L’excellence automobile pour tous les terrains</p>
-    <a href="#vehicules" class="btn btn-warning mt-3">Voir les véhicules</a>
-  </div>
-</header>
-
-<!-- SERVICES -->
-<section id="services" class="py-5 text-center">
-  <div class="container">
-    <h3>Nos Services</h3>
-    <p class="mb-5">AUTOZEIN vous accompagne dans tous vos projets automobiles avec des solutions adaptées et professionnelles.</p>
-
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card service-card p-4">
-          <h5>Vente de véhicules</h5>
-          <p>Large sélection de voitures neuves et d’occasion soigneusement vérifiées pour garantir qualité et performance.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card service-card p-4">
-          <h5>Location flexible</h5>
-          <p>Des offres de location adaptées à vos besoins, que ce soit pour un jour, une semaine ou plus.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card service-card p-4">
-          <h5>Entretien & suivi</h5>
-          <p>Un service professionnel pour maintenir votre véhicule en parfait état et assurer votre sécurité.</p>
-        </div>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <i class="fas fa-shield-alt text-warning me-2 fs-4"></i>
+        <span class="brand-text">JORDY<span class="text-warning">BUSINESS</span></span>
+      </a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#hero">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#vehicules">Véhicules</a></li>
+          <li class="nav-item"><a class="nav-link me-lg-3" href="#contact">Contact</a></li>
+          
+          <!-- Theme Toggle Button -->
+          <li class="nav-item mt-3 mt-lg-0">
+            <button id="themeToggleBtn" class="btn btn-outline-warning rounded-pill d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; transition: all 0.3s;">
+              <i class="fas fa-moon fs-5" id="themeIcon"></i>
+            </button>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- VEHICULES -->
-<section id="vehicules" class="py-5 bg-light">
-  <div class="container">
-    <h3 class="text-center mb-5">Nos Véhicules</h3>
-    <div class="row g-4">
-
-      <!-- Voitures -->
-      <div class="col-md-4">
-        <div class="card car-card">
-          <img src="./image/BMW.jpg" alt="BMW Série 3">
-          <div class="card-body">
-            <h5>BMW Série 3</h5>
-            <p>2022 • 35 000 km • Automatique</p>
-            <h6>35 000 €</h6>
-            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
+  <!-- HERO CAROUSEL -->
+  <header id="hero">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+      </div>
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active"
+          style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./image/hero-bg.jpg');">
+          <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100">
+            <h1 data-aos="zoom-in" data-aos-duration="1000">JORDYBUSINESS</h1>
+            <p class="subtitle" data-aos="fade-up" data-aos-delay="200">L’excellence automobile pour tous les terrains
+            </p>
+            <a href="#vehicules" class="btn btn-warning mt-3" data-aos="fade-up" data-aos-delay="400">Voir les
+              véhicules</a>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-item"
+          style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+          <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100">
+            <h1>Conduisez vos rêves</h1>
+            <p class="subtitle">Des modèles premium à portée de main.</p>
+            <a href="#vehicules" class="btn btn-warning mt-3">Découvrir</a>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-item"
+          style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1549317661-bd32c8ce0be2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+          <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100">
+            <h1>Le luxe au quotidien</h1>
+            <p class="subtitle">Achetez ou louez en toute simplicité.</p>
+            <a href="#contact" class="btn btn-warning mt-3">Nous contacter</a>
           </div>
         </div>
       </div>
-
-      <div class="col-md-4">
-        <div class="card car-card">
-          <img src="./image/audi.jpg" alt="Audi A4">
-          <div class="card-body">
-            <h5>Audi A4</h5>
-            <p>2021 • 40 000 km</p>
-            <h6>28 000 €</h6>
-            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card car-card">
-          <img src="./image/pexels-auto-2179220_1920.jpg" alt="Mercedes Classe A">
-          <div class="card-body">
-            <h5>Mercedes Classe A</h5>
-            <p>2023 • 20 000 km</p>
-            <h6>30 000 €</h6>
-            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card car-card">
-          <img src="./image/Peugeot_yaris.jpg" alt="Peugeot 3008">
-          <div class="card-body">
-            <h5>Peugeot 3008</h5>
-            <p>2020 • 50 000 km</p>
-            <h6>25 000 €</h6>
-            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card car-card">
-          <img src="./image/clio.jpg" alt="Renault Clio">
-          <div class="card-body">
-            <h5>Renault Clio</h5>
-            <p>2019 • 60 000 km</p>
-            <h6>18 000 €</h6>
-            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card car-card">
-          <img src="./image/Toyota.jpg" alt="Toyota Yaris">
-          <div class="card-body">
-            <h5>Toyota Yaris</h5>
-            <p>2022 • 25 000 km</p>
-            <h6>20 000 €</h6>
-            <button class="btn btn-dark w-100" onclick="contact()">Réserver</button>
-          </div>
-        </div>
-      </div>
-
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Précédent</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Suivant</span>
+      </button>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- CONTACT -->
-<section id="contact" class="py-5 text-center">
-  <div class="container">
-    <h3>Contactez-nous</h3>
-    <p>Une question ? Un projet ? Notre équipe est à votre écoute.</p>
+  <!-- SERVICES -->
+  <section id="services" class="py-5 text-center">
+    <div class="container">
+      <h3>Nos Services</h3>
+      <p class="mb-5">JORDYBUSINESS vous accompagne dans tous vos projets automobiles avec des solutions adaptées et
+        professionnelles.</p>
 
-    <form id="contact-form" class="row g-3 justify-content-center mt-4">
-      <div class="col-md-4">
-        <input type="text" name="name" class="form-control" placeholder="Nom" required>
-      </div>
-      <div class="col-md-4">
-        <input type="email" name="email" class="form-control" placeholder="Email" required>
-      </div>
-      <div class="col-8">
-        <textarea name="message" class="form-control" rows="4" placeholder="Votre message" required></textarea>
-      </div>
-      <div class="col-8">
-        <button type="submit" class="btn btn-warning w-100">Envoyer</button>
-      </div>
-    </form>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-dark text-white pt-4 pb-2">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-4 mb-3 mb-md-0">
-        <h5 class="fw-bold">JORDYBUSINESS</h5>
-        <p class="small">L’excellence automobile pour tous les terrains</p>
-      </div>
-      <div class="col-md-4 mb-3 mb-md-0">
-        <p class="mb-1"><i class="fas fa-phone-alt me-2"></i>07-67-77-80-81</p>
-        <p class="mb-0"><i class="fas fa-envelope me-2"></i>jordybusiness@gmail.com</p>
-      </div>
-      <div class="col-md-4">
-        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card service-card p-4">
+            <h5>Vente de véhicules</h5>
+            <p>Large sélection de voitures neuves et d’occasion soigneusement vérifiées pour garantir qualité et
+              performance.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card p-4">
+            <h5>Location flexible</h5>
+            <p>Des offres de location adaptées à vos besoins, que ce soit pour un jour, une semaine ou plus.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card p-4">
+            <h5>Entretien & suivi</h5>
+            <p>Un service professionnel pour maintenir votre véhicule en parfait état et assurer votre sécurité.</p>
+          </div>
+        </div>
       </div>
     </div>
-    <hr class="bg-white mt-3">
-    <p class="small mb-0">© 2026 JORDYBUSINESS - Tous droits réservés</p>
+  </section>
+
+  <!-- VEHICULES -->
+  <section id="vehicules" class="py-5 bg-light">
+    <div class="container">
+      <h3 class="text-center mb-5">Nos Véhicules</h3>
+
+      <!-- Barre de Recherche -->
+      <div class="row justify-content-center mb-4" data-aos="fade-up">
+        <div class="col-md-6 col-lg-5">
+          <div class="input-group input-group-lg shadow-sm"
+            style="border-radius: 50px; overflow: hidden; border: 1px solid #ddd;">
+            <span class="input-group-text bg-white border-0" id="search-icon"><i
+                class="fas fa-search text-muted"></i></span>
+            <input type="text" id="searchInput" class="form-control border-0 bg-white shadow-none"
+              placeholder="Rechercher une marque, un modèle..." autocomplete="off">
+          </div>
+        </div>
+      </div>
+
+      <!-- Filtres -->
+      <div class="d-flex justify-content-center flex-wrap mb-4" data-aos="fade-up">
+        <button class="btn btn-dark filter-btn active mx-1 mb-2" data-filter="all">Tous</button>
+        <button class="btn btn-outline-dark filter-btn mx-1 mb-2" data-filter="berline">Berlines</button>
+        <button class="btn btn-outline-dark filter-btn mx-1 mb-2" data-filter="compacte">Compactes & Citadines</button>
+        <button class="btn btn-outline-dark filter-btn mx-1 mb-2" data-filter="suv">SUV</button>
+      </div>
+
+      <div class="row g-4" id="cars-container">
+        <!-- Les véhicules seront générés ici dynamiquement par JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS CLIENTS -->
+  <section id="reviews" class="py-5">
+    <div class="container text-center" data-aos="fade-up">
+      <h3 class="mb-5 fw-bold">Avis de nos clients</h3>
+      <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner shadow p-4 rounded bg-white mx-auto" style="max-width: 800px; position: relative;">
+          <i class="fas fa-quote-left text-warning opacity-25"
+            style="font-size: 4rem; position: absolute; top: 10px; left: 10px;"></i>
+
+          <div class="carousel-item active">
+            <div class="mx-auto mt-4">
+              <p class="fs-5 fst-italic text-dark px-4">"Une expérience d'achat incroyable. La BMW que j'ai récupérée
+                est dans un état irréprochable et l'équipe est très professionnelle !"</p>
+              <div class="text-warning mb-2 fs-5">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <h6 class="fw-bold mt-3 text-secondary">- Thomas R.</h6>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="mx-auto mt-4">
+              <p class="fs-5 fst-italic text-dark px-4">"J'ai loué un SUV pour un week-end en famille, le processus a
+                été super rapide et la voiture était parfaite. Je recommande totalement."</p>
+              <div class="text-warning mb-2 fs-5">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+              <h6 class="fw-bold mt-3 text-secondary">- Sophie M.</h6>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="mx-auto mt-4">
+              <p class="fs-5 fst-italic text-dark px-4">"Entretien régulier de mon véhicule de prestige chez eux.
+                Toujours ponctuels, transparents sur les tarifs et de bon conseil. Rien à redire."</p>
+              <div class="text-warning mb-2 fs-5">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <h6 class="fw-bold mt-3 text-secondary">- Antoine D.</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contrôles du carrousel -->
+        <div class="mt-4">
+          <button class="btn btn-outline-dark rounded-circle me-2" type="button" data-bs-target="#reviewsCarousel"
+            data-bs-slide="prev" style="width: 45px; height: 45px;">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="btn btn-outline-dark rounded-circle" type="button" data-bs-target="#reviewsCarousel"
+            data-bs-slide="next" style="width: 45px; height: 45px;">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+      <h3 class="text-center mb-5 fw-bold">Questions Fréquentes</h3>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion shadow-sm" id="accordionFAQ">
+
+            <!-- Item 1 -->
+            <div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button fw-bold collapsed bg-white" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq1">
+                  Proposez-vous des solutions de financement ?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body text-muted bg-white border-top">
+                  Oui, nous proposons plusieurs systèmes de financement (crédit classique, LOA, LLD) grâce à nos
+                  partenaires financiers. Nous étudions votre dossier pour nous adapter parfaitement à votre budget.
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button fw-bold collapsed bg-white" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq2">
+                  Reprenez-vous les anciens véhicules ?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body text-muted bg-white border-top">
+                  Absolument. Lors de l'achat d'un nouveau véhicule chez nous, nous pouvons évaluer votre ancienne
+                  voiture pour une reprise directe au meilleur prix du marché, ce qui facilitera votre nouvel apport.
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button fw-bold collapsed bg-white" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq3">
+                  Quelle est la durée de la garantie sur l'occasion ?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body text-muted bg-white border-top">
+                  Tous nos véhicules d'occasion premium sont vendus avec une garantie incluse d'au minimum 12 mois. Vous
+                  avez également la possibilité de souscrire à une extension de couverture intégrale allant jusqu'à 36
+                  mois.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5 text-center">
+    <div class="container">
+      <h3>Contactez-nous</h3>
+      <p>Une question ? Un projet ? Notre équipe est à votre écoute.</p>
+
+      <form id="contact-form" class="row g-3 justify-content-center mt-4" data-aos="fade-up" data-aos-duration="800">
+        <div class="col-md-4">
+          <input type="text" name="name" class="form-control" placeholder="Nom" required>
+        </div>
+        <div class="col-md-4">
+          <input type="email" name="email" class="form-control" placeholder="Email" required>
+        </div>
+        <div class="col-8">
+          <select id="subject" name="subject" class="form-control" required>
+            <option value="" disabled selected>Choisissez un sujet</option>
+            <option value="Achat">Achat de véhicule</option>
+            <option value="Location">Location</option>
+            <option value="Entretien">Entretien & Suivi</option>
+            <option value="Autre">Autre demande</option>
+          </select>
+        </div>
+        <div class="col-8">
+          <textarea name="message" class="form-control" rows="4" placeholder="Votre message" required></textarea>
+        </div>
+        <div class="col-8">
+          <button type="submit" id="submitBtn" class="btn btn-warning w-100">
+            <span class="spinner-border spinner-border-sm d-none" id="submitSpinner" role="status"
+              aria-hidden="true"></span>
+            <span id="submitBtnText">Envoyer</span>
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- Vehicle Details Modal -->
+  <div class="modal fade" id="carModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg overflow-hidden">
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white" data-bs-dismiss="modal"
+          aria-label="Close"
+          style="border-radius: 50%; padding: 10px; opacity: 0.9; box-shadow: 0 2px 10px rgba(0,0,0,0.2);"></button>
+        <div class="modal-body p-0">
+          <div class="row g-0 h-100">
+            <div class="col-lg-6">
+              <img id="carModalImage" src="" alt="Véhicule" class="img-fluid w-100 h-100"
+                style="object-fit: cover; min-height: 350px;">
+            </div>
+            <div class="col-lg-6 d-flex flex-column p-4 p-md-5">
+              <h2 id="carModalName" class="fw-bold mb-1" style="font-size: 2.2rem;">Modèle</h2>
+              <h3 id="carModalPrice" class="text-warning fw-bold mb-4">Prix</h3>
+
+              <p id="carModalDesc" class="text-muted mb-4 lh-lg">Description</p>
+
+              <div id="carModalBadges" class="d-flex flex-wrap mb-4">
+                <!-- Badges injectés ici -->
+              </div>
+
+              <h6 class="fw-bold text-uppercase mb-3" style="font-size: 0.9rem; letter-spacing: 1px;">Équipements
+                principaux</h6>
+              <div class="row mb-5" id="carModalFeatures">
+                <!-- Features injectées ici -->
+              </div>
+
+              <button id="carModalReserveBtn"
+                class="btn btn-dark btn-lg w-100 rounded-pill shadow-sm mt-auto py-3 text-uppercase fw-bold"
+                style="letter-spacing: 1px;">Être recontacté pour ce modèle</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</footer>
 
-<!-- JS Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Toast Notification -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 105;">
+    <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive"
+      aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body fs-6">
+          <i class="fas fa-check-circle me-2"></i> Votre message a été envoyé avec succès !
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+          aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
 
-<!-- EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
-<script src="script.js"></script>
+  <!-- Bouton Retour en haut -->
+  <button id="scrollToTopBtn" class="btn btn-warning" title="Retourner en haut">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white pt-5 pb-3 mt-auto"
+    style="background-color: #111 !important; border-top: 3px solid #ffc107;">
+    <div class="container">
+      <div class="row pt-4 pb-4">
+
+        <!-- Colonne 1 : Marque -->
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h3 class="fw-bold text-uppercase mb-3 text-white" style="letter-spacing: 2px;">JORDYBUSINESS</h3>
+          <p class="text-white pe-lg-4 lh-lg" style="font-size: 1.05rem;">
+            L’excellence automobile pour tous les terrains. Nous sommes spécialisés dans la vente de véhicules sportifs
+            et de prestige,
+            avec un accompagnement sur-mesure pour chaque client.
+          </p>
+          <div class="d-flex mt-4">
+            <a href="#"
+              class="text-white d-inline-flex align-items-center justify-content-center border rounded-circle me-3"
+              style="width: 40px; height: 40px; text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"
+              class="text-white d-inline-flex align-items-center justify-content-center border rounded-circle me-3"
+              style="width: 40px; height: 40px; text-decoration: none;"><i class="fab fa-instagram"></i></a>
+            <a href="#"
+              class="text-white d-inline-flex align-items-center justify-content-center border rounded-circle me-3"
+              style="width: 40px; height: 40px; text-decoration: none;"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white d-inline-flex align-items-center justify-content-center border rounded-circle"
+              style="width: 40px; height: 40px; text-decoration: none;"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Colonne 2 : Liens Rapides -->
+        <div class="col-lg-4 mb-4 mb-lg-0 px-lg-5">
+          <h5 class="fw-bold text-uppercase mb-4 text-white">Liens Rapides</h5>
+          <ul class="list-unstyled" style="font-size: 1.05rem;">
+            <li class="mb-3"><a href="#hero" class="text-white text-decoration-none d-flex align-items-center"><i
+                  class="fas fa-chevron-right text-warning me-2" style="font-size: 0.9rem;"></i> Accueil</a></li>
+            <li class="mb-3"><a href="#services" class="text-white text-decoration-none d-flex align-items-center"><i
+                  class="fas fa-chevron-right text-warning me-2" style="font-size: 0.9rem;"></i> Nos Services</a></li>
+            <li class="mb-3"><a href="#vehicules" class="text-white text-decoration-none d-flex align-items-center"><i
+                  class="fas fa-chevron-right text-warning me-2" style="font-size: 0.9rem;"></i> Notre Catalogue</a>
+            </li>
+            <li class="mb-3"><a href="#contact" class="text-white text-decoration-none d-flex align-items-center"><i
+                  class="fas fa-chevron-right text-warning me-2" style="font-size: 0.9rem;"></i> Formulaire de
+                Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 3 : Contact -->
+        <div class="col-lg-4">
+          <h5 class="fw-bold text-uppercase mb-4 text-white">Nous Contacter</h5>
+          <ul class="list-unstyled" style="font-size: 1.05rem;">
+            <li class="d-flex align-items-start mb-3">
+              <i class="fas fa-map-marker-alt text-warning mt-1 me-3 fs-4"></i>
+              <span class="text-white">123 Avenue des Champs-Élysées<br>75008 Paris, France</span>
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fas fa-phone-alt text-warning me-3 fs-4"></i>
+              <span class="text-white fw-medium">07 67 77 80 81</span>
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fas fa-envelope text-warning me-3 fs-4"></i>
+              <span class="text-white fw-medium">jordybusiness@gmail.com</span>
+            </li>
+            <li class="d-flex align-items-center">
+              <i class="fas fa-clock text-warning me-3 fs-4"></i>
+              <span class="text-white fw-medium">Lun-Sam : 9h00 - 19h00</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary mt-4 mb-4">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="text-white mb-0" style="font-size: 0.95rem;">© 2026 JORDYBUSINESS - Tous droits réservés.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+          <a href="#" class="text-white text-decoration-none me-3" style="font-size: 0.95rem;">Mentions Légales</a>
+          <a href="#" class="text-white text-decoration-none" style="font-size: 0.95rem;">Politique de
+            Confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="script.js"></script>
 
 </body>
+
 </html>
